@@ -45,11 +45,9 @@ export default function HomeScreen() {
               </View>
             </View>
 
-            {/* ACCOUNT / LOGIN */}
             <Pressable
               style={styles.avatar}
               onPress={() => {
-                console.log("LOGIN BUTTON PRESSED");
                 router.push("/login");
               }}
             >
@@ -60,6 +58,35 @@ export default function HomeScreen() {
           <Text style={styles.subtitle}>
             Tell Fixly AI what's wrong and we'll help you figure it out.
           </Text>
+
+          {/* MR. TERRIFIC ASSISTANT */}
+          <Pressable
+            style={styles.assistantCard}
+            onPress={() => router.push("/assistant")}
+          >
+            <View style={styles.assistantAvatar}>
+              <Text style={styles.assistantAvatarText}>M</Text>
+            </View>
+
+            <View style={styles.assistantInfo}>
+              <View style={styles.assistantTitleRow}>
+                <Text style={styles.assistantTitle}>
+                  Mr. Terrific
+                </Text>
+
+                <View style={styles.onlineBadge}>
+                  <View style={styles.onlineDot} />
+                  <Text style={styles.onlineText}>ONLINE</Text>
+                </View>
+              </View>
+
+              <Text style={styles.assistantText}>
+                Your personal AI assistant • Talk, ask or get things done
+              </Text>
+            </View>
+
+            <Text style={styles.assistantArrow}>›</Text>
+          </Pressable>
 
           {/* MAIN SOLVE CARD */}
           <View style={styles.mainCard}>
@@ -146,9 +173,9 @@ export default function HomeScreen() {
 
           <View style={styles.quickAccess}>
             <Pressable
-  style={styles.quickButton}
-  onPress={() => router.push("/(tabs)/history")}
->
+              style={styles.quickButton}
+              onPress={() => router.push("/(tabs)/history")}
+            >
               <Text style={styles.quickIcon}>🕘</Text>
 
               <View style={styles.quickTextContainer}>
@@ -302,8 +329,91 @@ const styles = StyleSheet.create({
     fontSize: 15,
     lineHeight: 22,
     marginTop: 14,
-    marginBottom: 25,
+    marginBottom: 18,
   },
+
+  /* MR TERRIFIC */
+
+  assistantCard: {
+    flexDirection: "row",
+    alignItems: "center",
+    backgroundColor: "#102235",
+    borderRadius: 22,
+    padding: 15,
+    marginBottom: 25,
+    borderWidth: 1,
+    borderColor: "#16B8A6",
+  },
+
+  assistantAvatar: {
+    width: 50,
+    height: 50,
+    borderRadius: 17,
+    backgroundColor: "#16B8A6",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+
+  assistantAvatarText: {
+    color: "#FFFFFF",
+    fontSize: 23,
+    fontWeight: "900",
+  },
+
+  assistantInfo: {
+    flex: 1,
+    marginLeft: 12,
+  },
+
+  assistantTitleRow: {
+    flexDirection: "row",
+    alignItems: "center",
+  },
+
+  assistantTitle: {
+    color: "#FFFFFF",
+    fontSize: 17,
+    fontWeight: "800",
+  },
+
+  onlineBadge: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginLeft: 8,
+    backgroundColor: "#0C2929",
+    paddingHorizontal: 7,
+    paddingVertical: 3,
+    borderRadius: 8,
+  },
+
+  onlineDot: {
+    width: 5,
+    height: 5,
+    borderRadius: 3,
+    backgroundColor: "#16B8A6",
+    marginRight: 4,
+  },
+
+  onlineText: {
+    color: "#16B8A6",
+    fontSize: 7,
+    fontWeight: "800",
+  },
+
+  assistantText: {
+    color: "#8496AA",
+    fontSize: 12,
+    lineHeight: 17,
+    marginTop: 4,
+  },
+
+  assistantArrow: {
+    color: "#16B8A6",
+    fontSize: 32,
+    marginLeft: 7,
+  },
+
+  /* MAIN CARD */
 
   mainCard: {
     backgroundColor: "#102235",
